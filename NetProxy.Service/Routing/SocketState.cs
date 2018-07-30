@@ -26,51 +26,51 @@ namespace NetProxy.Service.Routing
         public string HttpHeaderBuilder { get; set; }
         public int MaxBufferSize { get; set; }
 
-        private bool _isTunnelNegotationComplete = false;
-        public bool IsTunnelNegotationComplete
+        private bool _isProxyNegotationComplete = false;
+        public bool IsProxyNegotationComplete
         {
             get
             {
-                if (((this.IsIncomming && Route.BindingIsTunnel == false) && (this.Peer.IsOutgoing && Route.EndpointIsTunnel == false))
-                    || ((this.IsOutgoing && Route.EndpointIsTunnel == false) && (this.Peer.IsIncomming && Route.BindingIsTunnel == false)))
+                if (((this.IsIncomming && Route.BindingIsProxy == false) && (this.Peer.IsOutgoing && Route.EndpointIsProxy == false))
+                    || ((this.IsOutgoing && Route.EndpointIsProxy == false) && (this.Peer.IsIncomming && Route.BindingIsProxy == false)))
                 {
-                    return true; //No tunneling.
+                    return true; //No Proxying.
                 }
-                else if (((this.IsOutgoing && Route.EndpointIsTunnel) && (this.Peer.IsIncomming && Route.BindingIsTunnel))
-                    || ((this.IsIncomming && Route.BindingIsTunnel) && (this.Peer.IsOutgoing && Route.EndpointIsTunnel)))
+                else if (((this.IsOutgoing && Route.EndpointIsProxy) && (this.Peer.IsIncomming && Route.BindingIsProxy))
+                    || ((this.IsIncomming && Route.BindingIsProxy) && (this.Peer.IsOutgoing && Route.EndpointIsProxy)))
                 {
-                    //Both connections are tunnel endpoints.
-                    return _isTunnelNegotationComplete && this.Peer._isTunnelNegotationComplete;
+                    //Both connections are Proxy endpoints.
+                    return _isProxyNegotationComplete && this.Peer._isProxyNegotationComplete;
                 }
-                else if (((this.IsOutgoing && Route.EndpointIsTunnel) && (this.Peer.IsIncomming && Route.BindingIsTunnel == false))
-                    || ((this.IsIncomming && Route.BindingIsTunnel) && (this.Peer.IsOutgoing && Route.EndpointIsTunnel == false)))
+                else if (((this.IsOutgoing && Route.EndpointIsProxy) && (this.Peer.IsIncomming && Route.BindingIsProxy == false))
+                    || ((this.IsIncomming && Route.BindingIsProxy) && (this.Peer.IsOutgoing && Route.EndpointIsProxy == false)))
                 {
-                    //Only the current connection is a tunnel.
-                    return _isTunnelNegotationComplete;
+                    //Only the current connection is a Proxy.
+                    return _isProxyNegotationComplete;
                 }
-                else if (((this.IsOutgoing && Route.EndpointIsTunnel == false) && (this.Peer.IsIncomming && Route.BindingIsTunnel))
-                    || ((this.IsIncomming && Route.BindingIsTunnel == false) && (this.Peer.IsOutgoing && Route.EndpointIsTunnel)))
+                else if (((this.IsOutgoing && Route.EndpointIsProxy == false) && (this.Peer.IsIncomming && Route.BindingIsProxy))
+                    || ((this.IsIncomming && Route.BindingIsProxy == false) && (this.Peer.IsOutgoing && Route.EndpointIsProxy)))
                 {
-                    //Only the peer connection is a tunnel.
-                    return this.Peer._isTunnelNegotationComplete;
+                    //Only the peer connection is a Proxy.
+                    return this.Peer._isProxyNegotationComplete;
                 }
 
                 //Seriously, shouldn't ever get here...
-                return _isTunnelNegotationComplete && this.Peer.IsTunnelNegotationComplete;
+                return _isProxyNegotationComplete && this.Peer.IsProxyNegotationComplete;
             }
         }
 
-        public void SetTunnelNegotationComplete()
+        public void SetProxyNegotationComplete()
         {
-            _isTunnelNegotationComplete = true;
+            _isProxyNegotationComplete = true;
         }
 
         public bool UseEncryption
         {
             get
             {
-                return (this.IsOutgoing && Route.EndpointIsTunnel && Route.EncryptEndpointTunnel)
-                || (this.IsIncomming && Route.BindingIsTunnel && Route.EncryptBindingTunnel);
+                return (this.IsOutgoing && Route.EndpointIsProxy && Route.EncryptEndpointProxy)
+                || (this.IsIncomming && Route.BindingIsProxy && Route.EncryptBindingProxy);
             }
         }
 
@@ -78,8 +78,8 @@ namespace NetProxy.Service.Routing
         {
             get
             {
-                return (this.IsOutgoing && Route.EndpointIsTunnel && Route.CompressEndpointTunnel)
-                || (this.IsIncomming && Route.BindingIsTunnel && Route.CompressBindingTunnel);
+                return (this.IsOutgoing && Route.EndpointIsProxy && Route.CompressEndpointProxy)
+                || (this.IsIncomming && Route.BindingIsProxy && Route.CompressBindingProxy);
             }
         }
 
@@ -87,8 +87,8 @@ namespace NetProxy.Service.Routing
         {
             get
             {
-                return (this.IsOutgoing && Route.EndpointIsTunnel)
-                            || (this.IsIncomming && Route.BindingIsTunnel);
+                return (this.IsOutgoing && Route.EndpointIsProxy)
+                            || (this.IsIncomming && Route.BindingIsProxy);
             }
         }
 

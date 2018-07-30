@@ -39,8 +39,7 @@
             // 
             // serviceInstaller
             // 
-            this.serviceInstaller.Description = "Provides TCP/IP v4/v6/tunneling and routing services on NT based operating system" +
-    "s.";
+            this.serviceInstaller.Description = "Provides TCP/IP v4/v6/proxy/tunneling and routing services on NT based operating systems.";
             this.serviceInstaller.DisplayName = "NetworkDLS NetProxy";
             this.serviceInstaller.ServiceName = "NetworkDLSNetProxyService";
             this.serviceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;

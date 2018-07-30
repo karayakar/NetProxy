@@ -17,14 +17,14 @@ namespace NetProxy.Library.Routing
         public int ListenPort { get; set; }
         public int SpinLockCount { get; set; }
         public bool UseStickySessions { get; set; }
-        public bool CompressBindingTunnel { get; set; }
-        public bool CompressEndpointTunnel { get; set; }
-        public bool EncryptBindingTunnel { get; set; }
-        public bool EncryptEndpointTunnel { get; set; }
+        public bool CompressBindingProxy { get; set; }
+        public bool CompressEndpointProxy { get; set; }
+        public bool EncryptBindingProxy { get; set; }
+        public bool EncryptEndpointProxy { get; set; }
         public string BindingPreSharedKey { get; set; }
         public string EndpointPreSharedKey { get; set; }
-        public bool BindingIsTunnel { get; set; }
-        public bool EndpointIsTunnel { get; set; }
+        public bool BindingIsProxy { get; set; }
+        public bool EndpointIsProxy { get; set; }
         public int AcceptBacklogSize { get; set; }
         public int EncryptionInitilizationTimeoutMs { get; set; }
         public int InitialBufferSize { get; set; }

@@ -74,19 +74,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxConnectionPattern = new System.Windows.Forms.ComboBox();
-            this.tabPageTunneling = new System.Windows.Forms.TabPage();
+            this.tabPageProxy = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.checkBoxTunnelEndpointUseEncryption = new System.Windows.Forms.CheckBox();
-            this.checkBoxEndpointIsTunnel = new System.Windows.Forms.CheckBox();
-            this.textBoxTunnelEndpointPreSharedKey = new System.Windows.Forms.TextBox();
-            this.checkBoxTunnelEndpointUseCompression = new System.Windows.Forms.CheckBox();
+            this.checkBoxProxyEndpointUseEncryption = new System.Windows.Forms.CheckBox();
+            this.checkBoxEndpointIsProxy = new System.Windows.Forms.CheckBox();
+            this.textBoxProxyEndpointPreSharedKey = new System.Windows.Forms.TextBox();
+            this.checkBoxProxyEndpointUseCompression = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.checkBoxTunnelBindingUseEncryption = new System.Windows.Forms.CheckBox();
-            this.textBoxTunnelBindingPreSharedKey = new System.Windows.Forms.TextBox();
-            this.checkBoxTunnelBindingUseCompression = new System.Windows.Forms.CheckBox();
-            this.checkBoxBindingIsTunnel = new System.Windows.Forms.CheckBox();
+            this.checkBoxProxyBindingUseEncryption = new System.Windows.Forms.CheckBox();
+            this.textBoxProxyBindingPreSharedKey = new System.Windows.Forms.TextBox();
+            this.checkBoxProxyBindingUseCompression = new System.Windows.Forms.CheckBox();
+            this.checkBoxBindingIsProxy = new System.Windows.Forms.CheckBox();
             this.tabPageAdvanced = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBoxEncryptionInitTimeout = new System.Windows.Forms.TextBox();
@@ -109,7 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHTTPHeaders)).BeginInit();
             this.tabPageEndpoints.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEndpoints)).BeginInit();
-            this.tabPageTunneling.SuspendLayout();
+            this.tabPageProxy.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPageAdvanced.SuspendLayout();
@@ -197,7 +197,7 @@
             this.tabControl.Controls.Add(this.tabPageBindings);
             this.tabControl.Controls.Add(this.tabPageHTTPHeaders);
             this.tabControl.Controls.Add(this.tabPageEndpoints);
-            this.tabControl.Controls.Add(this.tabPageTunneling);
+            this.tabControl.Controls.Add(this.tabPageProxy);
             this.tabControl.Controls.Add(this.tabPageAdvanced);
             this.tabControl.Location = new System.Drawing.Point(12, 12);
             this.tabControl.Name = "tabControl";
@@ -528,25 +528,25 @@
             this.comboBoxConnectionPattern.Size = new System.Drawing.Size(121, 21);
             this.comboBoxConnectionPattern.TabIndex = 13;
             // 
-            // tabPageTunneling
+            // tabPageProxy
             // 
-            this.tabPageTunneling.Controls.Add(this.groupBox3);
-            this.tabPageTunneling.Controls.Add(this.groupBox2);
-            this.tabPageTunneling.Location = new System.Drawing.Point(4, 22);
-            this.tabPageTunneling.Name = "tabPageTunneling";
-            this.tabPageTunneling.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTunneling.Size = new System.Drawing.Size(583, 272);
-            this.tabPageTunneling.TabIndex = 5;
-            this.tabPageTunneling.Text = "Tunneling";
-            this.tabPageTunneling.UseVisualStyleBackColor = true;
+            this.tabPageProxy.Controls.Add(this.groupBox3);
+            this.tabPageProxy.Controls.Add(this.groupBox2);
+            this.tabPageProxy.Location = new System.Drawing.Point(4, 22);
+            this.tabPageProxy.Name = "tabPageProxy";
+            this.tabPageProxy.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageProxy.Size = new System.Drawing.Size(583, 272);
+            this.tabPageProxy.TabIndex = 5;
+            this.tabPageProxy.Text = "Proxy";
+            this.tabPageProxy.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.checkBoxTunnelEndpointUseEncryption);
-            this.groupBox3.Controls.Add(this.checkBoxEndpointIsTunnel);
-            this.groupBox3.Controls.Add(this.textBoxTunnelEndpointPreSharedKey);
-            this.groupBox3.Controls.Add(this.checkBoxTunnelEndpointUseCompression);
+            this.groupBox3.Controls.Add(this.checkBoxProxyEndpointUseEncryption);
+            this.groupBox3.Controls.Add(this.checkBoxEndpointIsProxy);
+            this.groupBox3.Controls.Add(this.textBoxProxyEndpointPreSharedKey);
+            this.groupBox3.Controls.Add(this.checkBoxProxyEndpointUseCompression);
             this.groupBox3.Location = new System.Drawing.Point(317, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(260, 167);
@@ -563,56 +563,56 @@
             this.label11.TabIndex = 23;
             this.label11.Text = "Pre-Shared Key:";
             // 
-            // checkBoxTunnelEndpointUseEncryption
+            // checkBoxProxyEndpointUseEncryption
             // 
-            this.checkBoxTunnelEndpointUseEncryption.AutoSize = true;
-            this.checkBoxTunnelEndpointUseEncryption.Enabled = false;
-            this.checkBoxTunnelEndpointUseEncryption.Location = new System.Drawing.Point(6, 65);
-            this.checkBoxTunnelEndpointUseEncryption.Name = "checkBoxTunnelEndpointUseEncryption";
-            this.checkBoxTunnelEndpointUseEncryption.Size = new System.Drawing.Size(104, 17);
-            this.checkBoxTunnelEndpointUseEncryption.TabIndex = 22;
-            this.checkBoxTunnelEndpointUseEncryption.Text = "Use Encryption?";
-            this.checkBoxTunnelEndpointUseEncryption.UseVisualStyleBackColor = true;
+            this.checkBoxProxyEndpointUseEncryption.AutoSize = true;
+            this.checkBoxProxyEndpointUseEncryption.Enabled = false;
+            this.checkBoxProxyEndpointUseEncryption.Location = new System.Drawing.Point(6, 65);
+            this.checkBoxProxyEndpointUseEncryption.Name = "checkBoxProxyEndpointUseEncryption";
+            this.checkBoxProxyEndpointUseEncryption.Size = new System.Drawing.Size(104, 17);
+            this.checkBoxProxyEndpointUseEncryption.TabIndex = 22;
+            this.checkBoxProxyEndpointUseEncryption.Text = "Use Encryption?";
+            this.checkBoxProxyEndpointUseEncryption.UseVisualStyleBackColor = true;
             // 
-            // checkBoxEndpointIsTunnel
+            // checkBoxEndpointIsProxy
             // 
-            this.checkBoxEndpointIsTunnel.AutoSize = true;
-            this.checkBoxEndpointIsTunnel.Location = new System.Drawing.Point(6, 19);
-            this.checkBoxEndpointIsTunnel.Name = "checkBoxEndpointIsTunnel";
-            this.checkBoxEndpointIsTunnel.Size = new System.Drawing.Size(197, 17);
-            this.checkBoxEndpointIsTunnel.TabIndex = 20;
-            this.checkBoxEndpointIsTunnel.Text = "Is Tunnel? (Connecting to NetProxy)";
-            this.checkBoxEndpointIsTunnel.UseVisualStyleBackColor = true;
-            this.checkBoxEndpointIsTunnel.CheckedChanged += new System.EventHandler(this.checkBoxEndpointIsTunnel_CheckedChanged);
+            this.checkBoxEndpointIsProxy.AutoSize = true;
+            this.checkBoxEndpointIsProxy.Location = new System.Drawing.Point(6, 19);
+            this.checkBoxEndpointIsProxy.Name = "checkBoxEndpointIsProxy";
+            this.checkBoxEndpointIsProxy.Size = new System.Drawing.Size(197, 17);
+            this.checkBoxEndpointIsProxy.TabIndex = 20;
+            this.checkBoxEndpointIsProxy.Text = "Is Proxy? (Connecting to NetProxy)";
+            this.checkBoxEndpointIsProxy.UseVisualStyleBackColor = true;
+            this.checkBoxEndpointIsProxy.CheckedChanged += new System.EventHandler(this.checkBoxEndpointIsProxy_CheckedChanged);
             // 
-            // textBoxTunnelEndpointPreSharedKey
+            // textBoxProxyEndpointPreSharedKey
             // 
-            this.textBoxTunnelEndpointPreSharedKey.Enabled = false;
-            this.textBoxTunnelEndpointPreSharedKey.Location = new System.Drawing.Point(6, 109);
-            this.textBoxTunnelEndpointPreSharedKey.Multiline = true;
-            this.textBoxTunnelEndpointPreSharedKey.Name = "textBoxTunnelEndpointPreSharedKey";
-            this.textBoxTunnelEndpointPreSharedKey.PasswordChar = '*';
-            this.textBoxTunnelEndpointPreSharedKey.Size = new System.Drawing.Size(248, 49);
-            this.textBoxTunnelEndpointPreSharedKey.TabIndex = 23;
+            this.textBoxProxyEndpointPreSharedKey.Enabled = false;
+            this.textBoxProxyEndpointPreSharedKey.Location = new System.Drawing.Point(6, 109);
+            this.textBoxProxyEndpointPreSharedKey.Multiline = true;
+            this.textBoxProxyEndpointPreSharedKey.Name = "textBoxProxyEndpointPreSharedKey";
+            this.textBoxProxyEndpointPreSharedKey.PasswordChar = '*';
+            this.textBoxProxyEndpointPreSharedKey.Size = new System.Drawing.Size(248, 49);
+            this.textBoxProxyEndpointPreSharedKey.TabIndex = 23;
             // 
-            // checkBoxTunnelEndpointUseCompression
+            // checkBoxProxyEndpointUseCompression
             // 
-            this.checkBoxTunnelEndpointUseCompression.AutoSize = true;
-            this.checkBoxTunnelEndpointUseCompression.Enabled = false;
-            this.checkBoxTunnelEndpointUseCompression.Location = new System.Drawing.Point(6, 42);
-            this.checkBoxTunnelEndpointUseCompression.Name = "checkBoxTunnelEndpointUseCompression";
-            this.checkBoxTunnelEndpointUseCompression.Size = new System.Drawing.Size(114, 17);
-            this.checkBoxTunnelEndpointUseCompression.TabIndex = 21;
-            this.checkBoxTunnelEndpointUseCompression.Text = "Use Compression?";
-            this.checkBoxTunnelEndpointUseCompression.UseVisualStyleBackColor = true;
+            this.checkBoxProxyEndpointUseCompression.AutoSize = true;
+            this.checkBoxProxyEndpointUseCompression.Enabled = false;
+            this.checkBoxProxyEndpointUseCompression.Location = new System.Drawing.Point(6, 42);
+            this.checkBoxProxyEndpointUseCompression.Name = "checkBoxProxyEndpointUseCompression";
+            this.checkBoxProxyEndpointUseCompression.Size = new System.Drawing.Size(114, 17);
+            this.checkBoxProxyEndpointUseCompression.TabIndex = 21;
+            this.checkBoxProxyEndpointUseCompression.Text = "Use Compression?";
+            this.checkBoxProxyEndpointUseCompression.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.checkBoxTunnelBindingUseEncryption);
-            this.groupBox2.Controls.Add(this.textBoxTunnelBindingPreSharedKey);
-            this.groupBox2.Controls.Add(this.checkBoxTunnelBindingUseCompression);
-            this.groupBox2.Controls.Add(this.checkBoxBindingIsTunnel);
+            this.groupBox2.Controls.Add(this.checkBoxProxyBindingUseEncryption);
+            this.groupBox2.Controls.Add(this.textBoxProxyBindingPreSharedKey);
+            this.groupBox2.Controls.Add(this.checkBoxProxyBindingUseCompression);
+            this.groupBox2.Controls.Add(this.checkBoxBindingIsProxy);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(260, 167);
@@ -629,48 +629,48 @@
             this.label12.TabIndex = 27;
             this.label12.Text = "Pre-Shared Key:";
             // 
-            // checkBoxTunnelBindingUseEncryption
+            // checkBoxProxyBindingUseEncryption
             // 
-            this.checkBoxTunnelBindingUseEncryption.AutoSize = true;
-            this.checkBoxTunnelBindingUseEncryption.Enabled = false;
-            this.checkBoxTunnelBindingUseEncryption.Location = new System.Drawing.Point(6, 65);
-            this.checkBoxTunnelBindingUseEncryption.Name = "checkBoxTunnelBindingUseEncryption";
-            this.checkBoxTunnelBindingUseEncryption.Size = new System.Drawing.Size(104, 17);
-            this.checkBoxTunnelBindingUseEncryption.TabIndex = 18;
-            this.checkBoxTunnelBindingUseEncryption.Text = "Use Encryption?";
-            this.checkBoxTunnelBindingUseEncryption.UseVisualStyleBackColor = true;
+            this.checkBoxProxyBindingUseEncryption.AutoSize = true;
+            this.checkBoxProxyBindingUseEncryption.Enabled = false;
+            this.checkBoxProxyBindingUseEncryption.Location = new System.Drawing.Point(6, 65);
+            this.checkBoxProxyBindingUseEncryption.Name = "checkBoxProxyBindingUseEncryption";
+            this.checkBoxProxyBindingUseEncryption.Size = new System.Drawing.Size(104, 17);
+            this.checkBoxProxyBindingUseEncryption.TabIndex = 18;
+            this.checkBoxProxyBindingUseEncryption.Text = "Use Encryption?";
+            this.checkBoxProxyBindingUseEncryption.UseVisualStyleBackColor = true;
             // 
-            // textBoxTunnelBindingPreSharedKey
+            // textBoxProxyBindingPreSharedKey
             // 
-            this.textBoxTunnelBindingPreSharedKey.Enabled = false;
-            this.textBoxTunnelBindingPreSharedKey.Location = new System.Drawing.Point(6, 109);
-            this.textBoxTunnelBindingPreSharedKey.Multiline = true;
-            this.textBoxTunnelBindingPreSharedKey.Name = "textBoxTunnelBindingPreSharedKey";
-            this.textBoxTunnelBindingPreSharedKey.PasswordChar = '*';
-            this.textBoxTunnelBindingPreSharedKey.Size = new System.Drawing.Size(248, 49);
-            this.textBoxTunnelBindingPreSharedKey.TabIndex = 19;
+            this.textBoxProxyBindingPreSharedKey.Enabled = false;
+            this.textBoxProxyBindingPreSharedKey.Location = new System.Drawing.Point(6, 109);
+            this.textBoxProxyBindingPreSharedKey.Multiline = true;
+            this.textBoxProxyBindingPreSharedKey.Name = "textBoxProxyBindingPreSharedKey";
+            this.textBoxProxyBindingPreSharedKey.PasswordChar = '*';
+            this.textBoxProxyBindingPreSharedKey.Size = new System.Drawing.Size(248, 49);
+            this.textBoxProxyBindingPreSharedKey.TabIndex = 19;
             // 
-            // checkBoxTunnelBindingUseCompression
+            // checkBoxProxyBindingUseCompression
             // 
-            this.checkBoxTunnelBindingUseCompression.AutoSize = true;
-            this.checkBoxTunnelBindingUseCompression.Enabled = false;
-            this.checkBoxTunnelBindingUseCompression.Location = new System.Drawing.Point(6, 42);
-            this.checkBoxTunnelBindingUseCompression.Name = "checkBoxTunnelBindingUseCompression";
-            this.checkBoxTunnelBindingUseCompression.Size = new System.Drawing.Size(114, 17);
-            this.checkBoxTunnelBindingUseCompression.TabIndex = 17;
-            this.checkBoxTunnelBindingUseCompression.Text = "Use Compression?";
-            this.checkBoxTunnelBindingUseCompression.UseVisualStyleBackColor = true;
+            this.checkBoxProxyBindingUseCompression.AutoSize = true;
+            this.checkBoxProxyBindingUseCompression.Enabled = false;
+            this.checkBoxProxyBindingUseCompression.Location = new System.Drawing.Point(6, 42);
+            this.checkBoxProxyBindingUseCompression.Name = "checkBoxProxyBindingUseCompression";
+            this.checkBoxProxyBindingUseCompression.Size = new System.Drawing.Size(114, 17);
+            this.checkBoxProxyBindingUseCompression.TabIndex = 17;
+            this.checkBoxProxyBindingUseCompression.Text = "Use Compression?";
+            this.checkBoxProxyBindingUseCompression.UseVisualStyleBackColor = true;
             // 
-            // checkBoxBindingIsTunnel
+            // checkBoxBindingIsProxy
             // 
-            this.checkBoxBindingIsTunnel.AutoSize = true;
-            this.checkBoxBindingIsTunnel.Location = new System.Drawing.Point(6, 19);
-            this.checkBoxBindingIsTunnel.Name = "checkBoxBindingIsTunnel";
-            this.checkBoxBindingIsTunnel.Size = new System.Drawing.Size(208, 17);
-            this.checkBoxBindingIsTunnel.TabIndex = 16;
-            this.checkBoxBindingIsTunnel.Text = "Is Tunnel? (Connection from NetProxy)";
-            this.checkBoxBindingIsTunnel.UseVisualStyleBackColor = true;
-            this.checkBoxBindingIsTunnel.CheckStateChanged += new System.EventHandler(this.checkBoxBindingIsTunnel_CheckStateChanged);
+            this.checkBoxBindingIsProxy.AutoSize = true;
+            this.checkBoxBindingIsProxy.Location = new System.Drawing.Point(6, 19);
+            this.checkBoxBindingIsProxy.Name = "checkBoxBindingIsProxy";
+            this.checkBoxBindingIsProxy.Size = new System.Drawing.Size(208, 17);
+            this.checkBoxBindingIsProxy.TabIndex = 16;
+            this.checkBoxBindingIsProxy.Text = "Is Proxy? (Connection from NetProxy)";
+            this.checkBoxBindingIsProxy.UseVisualStyleBackColor = true;
+            this.checkBoxBindingIsProxy.CheckStateChanged += new System.EventHandler(this.checkBoxBindingIsProxy_CheckStateChanged);
             // 
             // tabPageAdvanced
             // 
@@ -831,7 +831,7 @@
             this.tabPageEndpoints.ResumeLayout(false);
             this.tabPageEndpoints.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEndpoints)).EndInit();
-            this.tabPageTunneling.ResumeLayout(false);
+            this.tabPageProxy.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -895,19 +895,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEndpointsDescription;
         private System.Windows.Forms.ComboBox comboBoxBindingProtocol;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TabPage tabPageTunneling;
+        private System.Windows.Forms.TabPage tabPageProxy;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckBox checkBoxTunnelEndpointUseEncryption;
-        private System.Windows.Forms.CheckBox checkBoxEndpointIsTunnel;
-        private System.Windows.Forms.TextBox textBoxTunnelEndpointPreSharedKey;
-        private System.Windows.Forms.CheckBox checkBoxTunnelEndpointUseCompression;
+        private System.Windows.Forms.CheckBox checkBoxProxyEndpointUseEncryption;
+        private System.Windows.Forms.CheckBox checkBoxEndpointIsProxy;
+        private System.Windows.Forms.TextBox textBoxProxyEndpointPreSharedKey;
+        private System.Windows.Forms.CheckBox checkBoxProxyEndpointUseCompression;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox checkBoxTunnelBindingUseEncryption;
-        private System.Windows.Forms.TextBox textBoxTunnelBindingPreSharedKey;
-        private System.Windows.Forms.CheckBox checkBoxTunnelBindingUseCompression;
-        private System.Windows.Forms.CheckBox checkBoxBindingIsTunnel;
+        private System.Windows.Forms.CheckBox checkBoxProxyBindingUseEncryption;
+        private System.Windows.Forms.TextBox textBoxProxyBindingPreSharedKey;
+        private System.Windows.Forms.CheckBox checkBoxProxyBindingUseCompression;
+        private System.Windows.Forms.CheckBox checkBoxBindingIsProxy;
         private System.Windows.Forms.CheckBox checkBoxUseStickySessions;
         private System.Windows.Forms.TextBox textBoxSpinLockCount;
         private System.Windows.Forms.Label label14;

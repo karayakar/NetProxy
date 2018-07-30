@@ -211,7 +211,7 @@ namespace NetProxy.Service.Routing
                     connection.Route = _route;
                     connection.IsIncomming = true;
 
-                    if (_route.EncryptBindingTunnel)
+                    if (_route.EncryptBindingProxy)
                     {
                         connection.KeyNegotiator = new SecureKeyExchange.SecureKeyNegotiator();
 
@@ -221,11 +221,11 @@ namespace NetProxy.Service.Routing
                             Payload = connection.KeyNegotiator.GenerateNegotiationToken()
                         });
                     }
-                    else if (_route.BindingIsTunnel)
+                    else if (_route.BindingIsProxy)
                     {
                         SendPacketEnvelope(connection, new PacketEnvelope
                         {
-                            Label = IntraServiceLables.TunnelNegotationComplete,
+                            Label = IntraServiceLables.ProxyNegotationComplete,
                         });
                     }
 
@@ -266,11 +266,11 @@ namespace NetProxy.Service.Routing
                     connection.IsOutgoing = true;
                     connection.Route = _route;
 
-                    if (_route.EndpointIsTunnel && _route.EncryptEndpointTunnel == false)
+                    if (_route.EndpointIsProxy && _route.EncryptEndpointProxy == false)
                     {
                         SendPacketEnvelope(connection, new PacketEnvelope
                         {
-                            Label = IntraServiceLables.TunnelNegotationComplete,
+                            Label = IntraServiceLables.ProxyNegotationComplete,
                         });
                     }
 
@@ -330,13 +330,13 @@ namespace NetProxy.Service.Routing
 
                 SendPacketEnvelope(connection, new PacketEnvelope
                 {
-                    Label = IntraServiceLables.TunnelNegotationComplete,
+                    Label = IntraServiceLables.ProxyNegotationComplete,
                 }, sharedSecretString, commonSalt);
             }
-            else if (envelope.Label == IntraServiceLables.TunnelNegotationComplete)
+            else if (envelope.Label == IntraServiceLables.ProxyNegotationComplete)
             {
-                connection.SetTunnelNegotationComplete();
-                //Console.WriteLine("--{0} TunnelNegotationComplete", connection.Route.Name);
+                connection.SetProxyNegotationComplete();
+                //Console.WriteLine("--{0} ProxyNegotationComplete", connection.Route.Name);
                 //Console.WriteLine("--{0} Shared Secret: {1}", connection.Route.Name, connection.KeyNegotiator.SharedSecretString);
             }
         }
@@ -580,7 +580,7 @@ namespace NetProxy.Service.Routing
                     {
                         if (envelope.Label == null)
                         {
-                            if (connection.IsTunnelNegotationComplete)
+                            if (connection.IsProxyNegotationComplete)
                             {
                                 //Console.WriteLine("--Recv: {0} {1}", envelope.Payload.Length, Encoding.UTF8.GetString(envelope.Payload.Take(envelope.Payload.Length).ToArray()));
                                 ProcessReceivedData(connection, envelope.Payload, envelope.Payload.Length);
@@ -588,7 +588,7 @@ namespace NetProxy.Service.Routing
                             else
                             {
                                 Stats.DroppedPreNegotiatePacket++;
-                                //Console.WriteLine("--Dropped packet, tunnel negotation is not yet complete", route.Name);
+                                //Console.WriteLine("--Dropped packet, Proxy negotation is not yet complete", route.Name);
                             }
                         }
                         else
@@ -604,14 +604,14 @@ namespace NetProxy.Service.Routing
                     //If we are supposed to use encryption, nut its not been initialized then we need to wait before processing the received data.
                     //This is because we do not yet have the information required to decrypt it.
                     //Try a spin lock first, then start sleeping.
-                    if (connection.IsTunnelNegotationComplete == false)
+                    if (connection.IsProxyNegotationComplete == false)
                     {
                         WaitForData(connection);
 
                         int spinCount = _route.SpinLockCount;
                         DateTime? startTime = null;
 
-                        while (connection.IsTunnelNegotationComplete == false)
+                        while (connection.IsProxyNegotationComplete == false)
                         {
                             //TODO: This needs to timeout.
                             if (spinCount == 0)
@@ -631,7 +631,7 @@ namespace NetProxy.Service.Routing
                         }
                     }
 
-                    if (connection.IsTunnelNegotationComplete)
+                    if (connection.IsProxyNegotationComplete)
                     {
                         ProcessReceivedData(connection, connection.Buffer, connection.BytesReceived);
                     }

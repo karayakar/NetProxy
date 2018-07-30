@@ -22,7 +22,7 @@
             public const string ApplyNegotiationToken = "ApplyNegotiationToken";
             public const string ApplyResponseNegotiationToken = "ApplyResponseNegotiationToken";
             public const string EncryptionNegotationComplete = "EncryptionNegotationComplete";
-            public const string TunnelNegotationComplete = "TunnelNegotationComplete";
+            public const string ProxyNegotationComplete = "ProxyNegotationComplete";
         }
 
         public const string RegsitryKey = "SOFTWARE\\NetworkDLS\\NetProxy";

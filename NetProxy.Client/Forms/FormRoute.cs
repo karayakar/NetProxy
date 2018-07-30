@@ -100,16 +100,16 @@ namespace NetProxy.Client.Forms
             textBoxAcceptBacklogSize.Text = route.AcceptBacklogSize.ToString();
             comboBoxConnectionPattern.SelectedValue = route.Endpoints.ConnectionPattern;
             checkBoxListenAutoStart.Checked = route.AutoStart;
-            checkBoxBindingIsTunnel.Checked = route.BindingIsTunnel;
-            checkBoxEndpointIsTunnel.Checked = route.EndpointIsTunnel;
-            checkBoxBindingIsTunnel.Checked = route.BindingIsTunnel;
-            checkBoxTunnelBindingUseCompression.Checked = route.CompressBindingTunnel;
-            checkBoxTunnelBindingUseEncryption.Checked = route.EncryptBindingTunnel;
-            textBoxTunnelBindingPreSharedKey.Text = route.BindingPreSharedKey;
-            checkBoxEndpointIsTunnel.Checked = route.EndpointIsTunnel;
-            checkBoxTunnelEndpointUseCompression.Checked = route.CompressEndpointTunnel;
-            checkBoxTunnelEndpointUseEncryption.Checked = route.EncryptEndpointTunnel;
-            textBoxTunnelEndpointPreSharedKey.Text = route.EndpointPreSharedKey;
+            checkBoxBindingIsProxy.Checked = route.BindingIsProxy;
+            checkBoxEndpointIsProxy.Checked = route.EndpointIsProxy;
+            checkBoxBindingIsProxy.Checked = route.BindingIsProxy;
+            checkBoxProxyBindingUseCompression.Checked = route.CompressBindingProxy;
+            checkBoxProxyBindingUseEncryption.Checked = route.EncryptBindingProxy;
+            textBoxProxyBindingPreSharedKey.Text = route.BindingPreSharedKey;
+            checkBoxEndpointIsProxy.Checked = route.EndpointIsProxy;
+            checkBoxProxyEndpointUseCompression.Checked = route.CompressEndpointProxy;
+            checkBoxProxyEndpointUseEncryption.Checked = route.EncryptEndpointProxy;
+            textBoxProxyEndpointPreSharedKey.Text = route.EndpointPreSharedKey;
             checkBoxUseStickySessions.Checked = route.UseStickySessions;
             textBoxEncryptionInitTimeout.Text = route.EncryptionInitilizationTimeoutMs.ToString();
             textBoxStickySessionCacheExpiration.Text = route.StickySessionCacheExpiration.ToString();
@@ -211,15 +211,15 @@ namespace NetProxy.Client.Forms
             route.StickySessionCacheExpiration = Int32.Parse(textBoxStickySessionCacheExpiration.Text);
             route.SpinLockCount = Int32.Parse(textBoxSpinLockCount.Text);
 
-            route.BindingIsTunnel = checkBoxBindingIsTunnel.Checked;
-            route.CompressBindingTunnel = checkBoxTunnelBindingUseCompression.Checked;
-            route.EncryptBindingTunnel = checkBoxTunnelBindingUseEncryption.Checked;
-            route.BindingPreSharedKey = textBoxTunnelBindingPreSharedKey.Text;
+            route.BindingIsProxy = checkBoxBindingIsProxy.Checked;
+            route.CompressBindingProxy = checkBoxProxyBindingUseCompression.Checked;
+            route.EncryptBindingProxy = checkBoxProxyBindingUseEncryption.Checked;
+            route.BindingPreSharedKey = textBoxProxyBindingPreSharedKey.Text;
 
-            route.EndpointIsTunnel = checkBoxEndpointIsTunnel.Checked;
-            route.CompressEndpointTunnel = checkBoxTunnelEndpointUseCompression.Checked;
-            route.EncryptEndpointTunnel = checkBoxTunnelEndpointUseEncryption.Checked;
-            route.EndpointPreSharedKey = textBoxTunnelEndpointPreSharedKey.Text;
+            route.EndpointIsProxy = checkBoxEndpointIsProxy.Checked;
+            route.CompressEndpointProxy = checkBoxProxyEndpointUseCompression.Checked;
+            route.EncryptEndpointProxy = checkBoxProxyEndpointUseEncryption.Checked;
+            route.EndpointPreSharedKey = textBoxProxyEndpointPreSharedKey.Text;
 
             if (route.InitialBufferSize > route.MaxBufferSize)
             {
@@ -227,15 +227,15 @@ namespace NetProxy.Client.Forms
                 return;
             }
 
-            if (route.BindingIsTunnel && route.EncryptBindingTunnel && route.BindingPreSharedKey.Trim().Length == 0)
+            if (route.BindingIsProxy && route.EncryptBindingProxy && route.BindingPreSharedKey.Trim().Length == 0)
             {
-                MessageBox.Show("The Binding Tunnel Key cannot be blank when tunnel encryption is selected.", Constants.TitleCaption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("The Binding Proxy Key cannot be blank when Proxy encryption is selected.", Constants.TitleCaption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
 
-            if (route.EndpointIsTunnel && route.EncryptEndpointTunnel && route.EndpointPreSharedKey.Trim().Length == 0)
+            if (route.EndpointIsProxy && route.EncryptEndpointProxy && route.EndpointPreSharedKey.Trim().Length == 0)
             {
-                MessageBox.Show("The Endpoint Tunnel Key cannot be blank when tunnel encryption is selected.", Constants.TitleCaption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("The Endpoint Proxy Key cannot be blank when Proxy encryption is selected.", Constants.TitleCaption, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
 
@@ -355,18 +355,18 @@ namespace NetProxy.Client.Forms
             }
         }
 
-        private void checkBoxBindingIsTunnel_CheckStateChanged(object sender, EventArgs e)
+        private void checkBoxBindingIsProxy_CheckStateChanged(object sender, EventArgs e)
         {
-            checkBoxTunnelBindingUseCompression.Enabled = checkBoxBindingIsTunnel.Checked;
-            checkBoxTunnelBindingUseEncryption.Enabled = checkBoxBindingIsTunnel.Checked;
-            textBoxTunnelBindingPreSharedKey.Enabled = checkBoxBindingIsTunnel.Checked;
+            checkBoxProxyBindingUseCompression.Enabled = checkBoxBindingIsProxy.Checked;
+            checkBoxProxyBindingUseEncryption.Enabled = checkBoxBindingIsProxy.Checked;
+            textBoxProxyBindingPreSharedKey.Enabled = checkBoxBindingIsProxy.Checked;
         }
 
-        private void checkBoxEndpointIsTunnel_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxEndpointIsProxy_CheckedChanged(object sender, EventArgs e)
         {
-            checkBoxTunnelEndpointUseCompression.Enabled = checkBoxEndpointIsTunnel.Checked;
-            checkBoxTunnelEndpointUseEncryption.Enabled = checkBoxEndpointIsTunnel.Checked;
-            textBoxTunnelEndpointPreSharedKey.Enabled = checkBoxEndpointIsTunnel.Checked;
+            checkBoxProxyEndpointUseCompression.Enabled = checkBoxEndpointIsProxy.Checked;
+            checkBoxProxyEndpointUseEncryption.Enabled = checkBoxEndpointIsProxy.Checked;
+            textBoxProxyEndpointPreSharedKey.Enabled = checkBoxEndpointIsProxy.Checked;
         }
     }
 }

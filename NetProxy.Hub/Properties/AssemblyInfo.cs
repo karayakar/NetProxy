@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NetProxy.Hub")]
-[assembly: AssemblyDescription("Provides TCP/IP v4/v6/tunneling and routing services on NT based operating systems.")]
+[assembly: AssemblyDescription("Provides TCP/IP v4/v6/proxy/tunneling and routing services on NT based operating systems.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("NetworkDLS")]
 [assembly: AssemblyProduct("NetProxy.Hub")]
