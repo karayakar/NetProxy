@@ -1,7 +1,7 @@
 [Setup]
 ;-- Main Setup Information
  AppName                         = NetProxy
- AppVerName                      = NetProxy 1.0.0.2
+ AppVerName                      = NetProxy 1.0.0.3
  AppCopyright                    = Copyright © 1995-2018 NetworkDLS.
  DefaultDirName                  = {pf}\NetworkDLS\NetProxy
  DefaultGroupName                = NetworkDLS\NetProxy
@@ -18,7 +18,7 @@
  AppPublisher    = NetworkDLS
  AppPublisherURL = http://www.NetworkDLS.com/
  AppUpdatesURL   = http://www.NetworkDLS.com/
- AppVersion      = 1.0.0.1
+ AppVersion      = 1.0.0.3
 
 [Components]
  Name: Base;            Description: "Base Install";       Types: full compact custom;  Flags: Fixed;
@@ -26,14 +26,17 @@
  Name: Service;         Description: "Router Service";     Types: full compact custom;
 
 [Files]
- Source: "..\NetProxy.Client\bin\release\NetProxy.Client.exe";      DestDir: "{app}";  Components: Base\Management; Flags: IgnoreVersion;
- Source: "..\NetProxy.Client\bin\release\*.dll";                     DestDir: "{app}";  Components: Base\Management; Flags: IgnoreVersion;
- Source: "..\NetProxy.Service\bin\release\NetProxy.Service.exe";    DestDir: "{app}";  Components: Service;         Flags: IgnoreVersion;
- Source: "..\NetProxy.Service\bin\release\*.dll";                    DestDir: "{app}";  Components: Service;         Flags: IgnoreVersion;
- Source: "Data\*.*";                                                  DestDir: "{app}\Config"; Components: Service;         Flags: OnlyIfDoesntExist;
+ Source: "..\NetProxy.Client\bin\release\NetProxy.Client.exe";      DestDir: "{app}";        Components: Base\Management; Flags: IgnoreVersion;
+ Source: "..\NetProxy.Client\bin\release\*.dll";                    DestDir: "{app}";        Components: Base\Management; Flags: IgnoreVersion;
+ Source: "..\NetProxy.Service\bin\release\NetProxy.Service.exe";    DestDir: "{app}";        Components: Service;         Flags: IgnoreVersion;
+ Source: "..\NetProxy.Service\bin\release\*.dll";                   DestDir: "{app}";        Components: Service;         Flags: IgnoreVersion;
+ Source: "..\HelpFile\Help.chm";                                    DestDir: "{app}";        Components: Base\Management; Flags: IgnoreVersion;
+ 
+ Source: "Data\*.*";                                                DestDir: "{app}\Config"; Components: Service;         Flags: OnlyIfDoesntExist;
 
 [Icons]
- Name: "{group}\Manage NetProxy"; Filename: "{app}\NetProxy.Client.Exe"; WorkingDir: "{app}"; Components: Base\Management;
+ Name: "{group}\Manage NetProxy";        Filename: "{app}\NetProxy.Client.Exe"; WorkingDir: "{app}"; Components: Base\Management;
+ Name: "{group}\NetProxy Documentation"; Filename: "{app}\Help.chm";            WorkingDir: "{app}"; Components: Base\Management;
 
 [Registry]
  Root: HKLM; Subkey: "Software\NetworkDLS\NetProxy"; Flags: uninsdeletekey noerror;

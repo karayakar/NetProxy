@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Route - Proxy</title>
+        <link href="../style.css" type="text/css" rel="stylesheet">
+
+<meta name="MS-HKWD" content="Configuration">
+<meta name="MS-HKWD" content="General Settings">
+
+    </head>
+    <body>
+        <center>
+            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="white" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="middle">
+                            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="white" border="0" height="50">
+                                <tr valign="middle">
+                                    <td width="100%" valign="middle">
+                                        <p class="TITLE">&nbsp;Route - Proxy</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="1" bgcolor="#00bfff"><img height="0" src="pixil.gif" width="160" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td height="10" bgcolor="white">
+                            <table class="body" width="100%" height="100%" cellspacing="4" cellpadding="20">
+                                <tbody>
+                                    <tr height="100%" valign="top">
+                                        <td width="100%">
+                                        <table>
+                                            <tr width="650" valign="top">
+                                                <td width="650">
+                                                    <p><Center><img src="../Images/AppLogo.gif"></Center><BR><HR><BR></p>
+<!-- ---------------------------------------------------(BEGIN CONTENT) --------------------------------------------------- -->
+<P align=justify>
+
+The proxy settings allow one instance of NetProxy to communicate natively with another instance of NetProxy. This can be useful when ordinary unencrypted data needs to be encrypted while in transit - with the added benefit of data compression.
+Pre-shared keys are used for all communication over a proxy, but each and every connection made through the proxy will negotiate its own unique pair of send/receive keys using a Diffie-Hellman key exchange.
+
+<ul>
+	<li><strong>Incomming / Binding:</strong></li>
+	<ul>
+		<li><strong>Is Proxy:</strong> Whether or not the incomming connection is from an instance of NetProxy.</li>
+		<li><strong>Use Compression:</strong> Whether or not data to and from the other instance of NetProxy is to be compressed.</li>
+		<li><strong>Use Encryption:</strong> Whether or not data to and from the other instance of NetProxy is to be encrypted.</li>
+		<li><strong>Pre-Shared Key:</strong> The pre-shared key for early negoation encryption. Also serves as authentication as both ends of the connection must share the same key.</li>
+	</ul>
+
+	<li><strong>Outgoing / Endpoints:</strong></li>
+	<ul>
+		<li><strong>Is Proxy:</strong> Whether or not the outgoing connection is to an instance of NetProxy.</li>
+		<li><strong>Use Compression:</strong> Whether or not data to and from the other instance of NetProxy is to be compressed.</li>
+		<li><strong>Use Encryption:</strong> Whether or not data to and from the other instance of NetProxy is to be encrypted.</li>
+		<li><strong>Pre-Shared Key:</strong> The pre-shared key for early negoation encryption. Also serves as authentication as both ends of the connection must share the same key.</li>
+	</ul>
+</ul>
+
+<strong>Dialog:</strong><br />
+<img src="../Images/Route - Proxy.png"><br /><br />
+
+<strong>Concept:</strong><br />
+<img src="../Images/Route - Proxy - Concept.png"><br />
+
+</P>
+<!-- ----------------------------------------------------(END CONTENT) ---------------------------------------------------- -->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="1" bgcolor="#00bfff"><img height="0" src="pixil.gif" width="160" border="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="bottom" cellspacing="0" cellpadding="5" width="100%" border="0" height="30" bgcolor="white">
+                <tbody>
+                    <tr bgcolor="white">
+                        <td>Copyright &copy; 2018 NetworkDLS. All rights reserved.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </body>
+</html>

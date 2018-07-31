@@ -601,7 +601,7 @@ namespace NetProxy.Service.Routing
                 {
                     //Console.WriteLine("--Recv:{0}, Raw: {1}", route.Name, Encoding.UTF8.GetString(connection.Buffer.Take(connection.BytesReceived).ToArray()));
 
-                    //If we are supposed to use encryption, nut its not been initialized then we need to wait before processing the received data.
+                    //If we are supposed to use encryption, but its not been initialized then we need to wait before processing the received data.
                     //This is because we do not yet have the information required to decrypt it.
                     //Try a spin lock first, then start sleeping.
                     if (connection.IsProxyNegotationComplete == false)

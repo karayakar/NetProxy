@@ -54,6 +54,7 @@
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.panelPerformance = new System.Windows.Forms.Panel();
             this.chartPerformance = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoutes)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panelPerformance.SuspendLayout();
@@ -201,7 +202,8 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.documentationToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -209,7 +211,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -267,6 +269,13 @@
             this.chartPerformance.TabIndex = 0;
             this.chartPerformance.Text = "chart1";
             // 
+            // documentationToolStripMenuItem
+            // 
+            this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.documentationToolStripMenuItem.Text = "Documentation";
+            this.documentationToolStripMenuItem.Click += new System.EventHandler(this.documentationToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBytesTransferred;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotalConnections;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCurrentConnections;
+        private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
     }
 }

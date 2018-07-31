@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
+using Microsoft.Win32;
 using NetProxy.Client.Classes;
 using NetProxy.Client.Properties;
 using NetProxy.Hub;
 using NetProxy.Library;
 using NetProxy.Library.Payloads;
 using NetProxy.Library.Utility;
+using NetProxy.Library.Win32;
 using Newtonsoft.Json;
 
 namespace NetProxy.Client.Forms
@@ -445,5 +447,11 @@ namespace NetProxy.Client.Forms
         }
 
         #endregion
+
+        private void documentationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string helpFile = System.IO.Path.Combine(RegistryHelper.GetString(Registry.LocalMachine, Constants.RegsitryKey, "", "AppPath"), "Help.chm");
+            System.Diagnostics.Process.Start(helpFile);
+        }
     }
 }

@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Route - Advanced</title>
+        <link href="../style.css" type="text/css" rel="stylesheet">
+
+<meta name="MS-HKWD" content="Configuration">
+<meta name="MS-HKWD" content="General Settings">
+
+    </head>
+    <body>
+        <center>
+            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="white" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="middle">
+                            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="white" border="0" height="50">
+                                <tr valign="middle">
+                                    <td width="100%" valign="middle">
+                                        <p class="TITLE">&nbsp;Route - Advanced</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="1" bgcolor="#00bfff"><img height="0" src="pixil.gif" width="160" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td height="10" bgcolor="white">
+                            <table class="body" width="100%" height="100%" cellspacing="4" cellpadding="20">
+                                <tbody>
+                                    <tr height="100%" valign="top">
+                                        <td width="100%">
+                                        <table>
+                                            <tr width="650" valign="top">
+                                                <td width="650">
+                                                    <p><Center><img src="../Images/AppLogo.gif"></Center><BR><HR><BR></p>
+<!-- ---------------------------------------------------(BEGIN CONTENT) --------------------------------------------------- -->
+<P align=justify>
+
+Advances settings should only be changed if you have a compelling reason to do so - in fact, it is recommended that you review the service source code before modifying these values.
+<br /><br />
+
+<ul>
+	<li><strong>Buffer:</strong></li>
+	<ul>
+		<li><strong>Initial Size:</strong> The initial size of the communication buffer for each connection.</li>
+		<li><strong>Max Size:</strong> When data is flowing into NetProxy faster than downstream systems can consume it, the buffer can grow. This defined the maximum size of the buffer per connection</li>
+		<li><strong>Accept Backlog Size:</strong> The size of the incomming connection backlog queue. https://msdn.microsoft.com/en-us/library/system.net.sockets.socket.listen.aspx</li>
+	</ul>
+
+	<li><strong>Misc.:</strong></li>
+	<ul>
+		<li><strong>Encryption Initilization Timeout (ms):</strong> For proxy connections, this is the amount of time that NetProxy will wait for the negotiation to complete before disconnecting the connection.</li>
+		<li><strong>Spin-Lock Count:</strong> For proxy connections, this is the number of loops to perform to cause a limited delay when data is received before encryption is negotiated. This is a performance setting and will not affect overall functionality.</li>
+		<li><strong>Sticky Session Cache Expiration (s):</strong> The number of seconds that any incomming connections are bound to a given endpoint before falling back to the balancing rule.</li>
+	</ul>	
+</ul>
+
+<br /><br />
+
+<img src="../Images/Route - Advanced.png">
+
+</P>
+<!-- ----------------------------------------------------(END CONTENT) ---------------------------------------------------- -->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="1" bgcolor="#00bfff"><img height="0" src="pixil.gif" width="160" border="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="bottom" cellspacing="0" cellpadding="5" width="100%" border="0" height="30" bgcolor="white">
+                <tbody>
+                    <tr bgcolor="white">
+                        <td>Copyright &copy; 2018 NetworkDLS. All rights reserved.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </body>
+</html>

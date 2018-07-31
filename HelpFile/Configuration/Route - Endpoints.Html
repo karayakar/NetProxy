@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Route - Endpoints</title>
+        <link href="../style.css" type="text/css" rel="stylesheet">
+
+<meta name="MS-HKWD" content="Configuration">
+<meta name="MS-HKWD" content="General Settings">
+
+    </head>
+    <body>
+        <center>
+            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="white" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="middle">
+                            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="white" border="0" height="50">
+                                <tr valign="middle">
+                                    <td width="100%" valign="middle">
+                                        <p class="TITLE">&nbsp;Route - Endpoints</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="1" bgcolor="#00bfff"><img height="0" src="pixil.gif" width="160" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td height="10" bgcolor="white">
+                            <table class="body" width="100%" height="100%" cellspacing="4" cellpadding="20">
+                                <tbody>
+                                    <tr height="100%" valign="top">
+                                        <td width="100%">
+                                        <table>
+                                            <tr width="650" valign="top">
+                                                <td width="650">
+                                                    <p><Center><img src="../Images/AppLogo.gif"></Center><BR><HR><BR></p>
+<!-- ---------------------------------------------------(BEGIN CONTENT) --------------------------------------------------- -->
+<P align=justify>
+When a connection is made to the NetProxy, its primary function to the make a secondary connection and divert all data from the incoming connection to this new outgoing connection. Endpoints are these outgoing connections. They can be used to load-balance or provide failover.
+<br /><br />
+
+<ul>
+	<li><strong>Connection Pattern:</strong></li>
+	<ul>
+		<li><strong>Round-Robbin:</strong> Round-Robbin will cause each incomming connection to be sent to the next Address in the endpoint pool.</li>
+		<li><strong>Fail-Over:</strong> Fail-Over will send all incomming connections into the first endpoint in the pool until connections to that address fail. Upon failure, any incomming connections will be sent to the next address in the pool.</li>
+	</ul>
+
+	<li><strong>Use Sticky Sessions:</strong> When enabled, causes any incomming connection from a given IP address "stick" to the endpoint which was originally seleced for it.</li>
+	<li><strong>Remote Endpoints:</strong></li>
+	<ul>
+		<li><strong>Enabled:</strong> Whether the address is enabled or disables.</li>
+		<li><strong>Address:</strong> The IP address or host name of the remote endpoint. Note: if a host name is used, there can be a performance hit in resolving to the IP address.</li>
+		<li><strong>Port:</strong> The TCP/IP port of the remote service.</li>
+		<li><strong>Description:</strong> A description of the endpoint.</li>
+	</ul>
+</ul>
+
+<br /><br />
+
+<img src="../Images/Route - Endpoints.png">
+
+</P>
+<!-- ----------------------------------------------------(END CONTENT) ---------------------------------------------------- -->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="1" bgcolor="#00bfff"><img height="0" src="pixil.gif" width="160" border="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="bottom" cellspacing="0" cellpadding="5" width="100%" border="0" height="30" bgcolor="white">
+                <tbody>
+                    <tr bgcolor="white">
+                        <td>Copyright &copy; 2018 NetworkDLS. All rights reserved.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </body>
+</html>

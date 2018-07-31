@@ -109,7 +109,7 @@
             this.Name = "FormSetPassword";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormSetPassword";
+            this.Text = "Set Password";
             this.Load += new System.EventHandler(this.FormSetPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
